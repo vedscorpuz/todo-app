@@ -1,6 +1,5 @@
 # todo-app
-To Do List Application for mobile
-Currently unfinished
+To Do List Application for mobile. Currently unfinished
 
 ### Technologies used:
 React Native, JavaScript, HTML/CSS
