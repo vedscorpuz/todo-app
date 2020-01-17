@@ -10,4 +10,4 @@ Components,
 Native Components,
 Input (TextInput),
 Lists (FlatList),
-Mobile Application ,
+Mobile Application
