@@ -5,9 +5,9 @@ To Do List Application for mobile. Currently unfinished
 React Native, JavaScript, HTML/CSS
 
 ### Things covered: 
-React Native
-Components
-Native Components
-Input (TextInput)
-Lists (FlatList)
-Mobile Application 
+React Native,
+Components,
+Native Components,
+Input (TextInput),
+Lists (FlatList),
+Mobile Application ,
