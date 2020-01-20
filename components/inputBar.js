@@ -9,7 +9,7 @@ const InputBar = (props) => {
             onChangeText={(todoInput) => props.textChange(todoInput)}
             value={props.todoInput} 
             />
-            <TouchableOpacity style={styles.addButton}>
+            <TouchableOpacity style={styles.addButton} onPress={props.addNewTodo}>
                 <Text style={styles.addButtonText}>ADD</Text>
             </TouchableOpacity>
         </View>

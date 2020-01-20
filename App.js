@@ -1,7 +1,8 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from './components/header';
 import InputBar from './components/inputBar';
+import TodoItem from './components/TodoItem';
 
 export default class App extends React.Component {
   constructor() {
@@ -16,7 +17,20 @@ export default class App extends React.Component {
     }
   }
 
+  addNewTodo() {
+    let todos = this.state.todos;
 
+    todos.unshift({
+      id: todos.length + 1,
+      todo: this.state.todoInput,
+      done: false
+    });
+
+    this.setState({
+      todos,
+      todoInput: ''
+    })
+  }
 
   render() {
     const statusbar = (Platform.OS == 'ios') ? <View style={styles.statusbar}></View> : <View></View>;
@@ -26,9 +40,21 @@ export default class App extends React.Component {
       {statusbar}
 
       <Header title="What to do?" />
-      <InputBar/>
+      <InputBar 
+        textChange={todoInput => this.setState({todoInput})}
+        addNewTodo={ () => this.addNewTodo() }
+      />
+      <FlatList 
+        data={this.state.todos}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem = {({item, index}) => {
+          return (
+            <TodoItem todoItem={item}/>
+          ) 
+        } }
+      />
     </View>
-  );
+    );
   }
 }
 
